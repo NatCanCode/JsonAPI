@@ -58,7 +58,12 @@ struct GithubUserView: View {
                     Text("Search user")
                 }
                 .searchable(text: $usernameToSearch, placement:.navigationBarDrawer(displayMode: .always))
-                .foregroundColor(.accentColor)
+                .foregroundColor(.white)
+                .font(.title3)
+                .fontWeight(.semibold)
+                .padding()
+                .background(.purple)
+                .cornerRadius(30)
                 Spacer()
 //                Text("Helen")
                 Text(user.login)
@@ -67,6 +72,7 @@ struct GithubUserView: View {
                     .padding()
 //                Text(" public repositories")
                 Text("\(user.repositories) public repositories")
+                    .padding()
 //                Image("Helen")
                 AsyncImage(url: URL(string: "\(user.avatarURL)"))
 //                    .scaledToFit()
@@ -74,16 +80,9 @@ struct GithubUserView: View {
                 Spacer()
             }
             .navigationTitle("GitHub Users")
-            //            .font(.title3)
-            //            .foregroundColor(.gray)
-            //            .fontWeight(.bold)
-            //            .padding()
-            //                    .cornerRadius(30)
-            //                    .border(.gray)
         }
     }
 }
-
 
 
 struct GithubUserView_Previews: PreviewProvider {

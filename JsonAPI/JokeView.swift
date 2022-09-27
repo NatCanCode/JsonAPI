@@ -48,13 +48,16 @@ struct JokeView: View {
 //                            .foregroundColor(.red)
 //                        Image(systemName: "shuffle")
 //                    }
-                    Text("Bla")
-                        .foregroundColor(.white)
+                    HStack {
+                        Text("Ready for a random joke?")
+                        Image(systemName: "shuffle")
+                    }
+                    .foregroundColor(.white)
                     .font(.title3)
+                    .fontWeight(.semibold)
                     .padding()
-                    .background(Color.purple)
+                    .background(.purple)
                     .cornerRadius(30)
-//                    .overlay(RoundedRectangle(cornerRadius: 30))
                 }
                 .padding()
                 Spacer()
