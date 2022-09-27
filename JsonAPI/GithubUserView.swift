@@ -7,13 +7,23 @@
 
 import SwiftUI
 
-struct User: Decodable {
-    let value: String
+struct User: Identifiable, Decodable {
+    let login: String
+    let id: Int
+    let repositories: Int
+    let avatarURL: String
+    
+    enum CodingKeys: String, CodingKey {
+        case login
+        case id
+        case repositories = "public_repos"
+        case avatarURL = "avatar_url"
+    }
 }
 
 //Async Await method
-func getRandomUser() async throws -> String {
-    guard let url = URL(string: "https://api.github.com/user")
+func getUser(username: String) async throws -> User {
+    guard let url = URL(string: "https://api.github.com/users/\(username)")
     else {
         fatalError("Missing URL")
     }
@@ -25,42 +35,41 @@ func getRandomUser() async throws -> String {
         fatalError("Error while fetching data")
     }
     let decoded = try JSONDecoder().decode(User.self, from: data)
-    let user = decoded.value
-    print("\(user)")
-    return user }
+   return decoded
+}
 
 
 struct GithubUserView: View {
     
-    @State var user: String = ""
-    //    @State var name: String = ""
-    //    //    @State var repositories: Int
-    //    @State var image: String = ""
+    @State var user = User(login: "", id: 0, repositories: 0, avatarURL: "")
     
-    //    @Binding var user: String = ""
+    @State private var usernameToSearch = ""
     
     var body: some View {
         NavigationView {
             VStack {
                 Spacer()
-                Form {
-//                    Task {
-//                        user = try await getRandomUser()
-//                    }
-                    TextField("", text: $user, prompt: Text("Type a username"))
+                Button {
+                    Task {
+                        user = try await getUser(username: usernameToSearch)
+                    }
+                    
+                } label: {
+                    Text("Search user")
                 }
+                .searchable(text: $usernameToSearch, placement:.navigationBarDrawer(displayMode: .always))
                 .foregroundColor(.accentColor)
-                //                    Spacer()
-                Text("Helen")
-                //                Text(userName)
+                Spacer()
+//                Text("Helen")
+                Text(user.login)
                     .font(.title)
                     .fontWeight(.semibold)
                     .padding()
-                Text(" public repositories")
-                //                Text("\(repositories) public repositories")
-                Image("Helen")
-                    .resizable()
-                    .scaledToFit()
+//                Text(" public repositories")
+                Text("\(user.repositories) public repositories")
+//                Image("Helen")
+                AsyncImage(url: URL(string: "\(user.avatarURL)"))
+//                    .scaledToFit()
                     .padding()
                 Spacer()
             }

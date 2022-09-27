@@ -43,15 +43,18 @@ struct JokeView: View {
                         joke = try await getRandomJoke()
                     }
                 } label: {
-                    HStack {
-                        Text("Ready for a random joke?")
-                        Image(systemName: "shuffle")
-                    }
-                    .foregroundColor(.white)
+//                    ZStack {
+//                        Text("Ready for a random joke?")
+//                            .foregroundColor(.red)
+//                        Image(systemName: "shuffle")
+//                    }
+                    Text("Bla")
+                        .foregroundColor(.white)
                     .font(.title3)
                     .padding()
+                    .background(Color.purple)
                     .cornerRadius(30)
-                    .overlay(RoundedRectangle(cornerRadius: 30))
+//                    .overlay(RoundedRectangle(cornerRadius: 30))
                 }
                 .padding()
                 Spacer()
