@@ -14,6 +14,8 @@
 		AC4EB17C28E2EAA900D378D4 /* JsonAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4EB17B28E2EAA900D378D4 /* JsonAPITests.swift */; };
 		AC4EB18628E2EAA900D378D4 /* JsonAPIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4EB18528E2EAA900D378D4 /* JsonAPIUITests.swift */; };
 		AC4EB18828E2EAA900D378D4 /* JsonAPIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4EB18728E2EAA900D378D4 /* JsonAPIUITestsLaunchTests.swift */; };
+		AC4EB19528E2F0F300D378D4 /* JokeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4EB19428E2F0F300D378D4 /* JokeView.swift */; };
+		AC4EB19728E2F68500D378D4 /* GithubUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4EB19628E2F68500D378D4 /* GithubUserView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		AC4EB18128E2EAA900D378D4 /* JsonAPIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JsonAPIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC4EB18528E2EAA900D378D4 /* JsonAPIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonAPIUITests.swift; sourceTree = "<group>"; };
 		AC4EB18728E2EAA900D378D4 /* JsonAPIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonAPIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AC4EB19428E2F0F300D378D4 /* JokeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeView.swift; sourceTree = "<group>"; };
+		AC4EB19628E2F68500D378D4 /* GithubUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUserView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 			children = (
 				AC4EB16A28E2EAA800D378D4 /* JsonAPIApp.swift */,
 				AC4EB16C28E2EAA800D378D4 /* ContentView.swift */,
+				AC4EB19428E2F0F300D378D4 /* JokeView.swift */,
+				AC4EB19628E2F68500D378D4 /* GithubUserView.swift */,
 				AC4EB16E28E2EAA900D378D4 /* Assets.xcassets */,
 				AC4EB17028E2EAA900D378D4 /* Preview Content */,
 			);
@@ -257,7 +263,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC4EB19728E2F68500D378D4 /* GithubUserView.swift in Sources */,
 				AC4EB16D28E2EAA800D378D4 /* ContentView.swift in Sources */,
+				AC4EB19528E2F0F300D378D4 /* JokeView.swift in Sources */,
 				AC4EB16B28E2EAA800D378D4 /* JsonAPIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
